@@ -1,3 +1,4 @@
+
 # 默认动作
 
 default :
@@ -22,7 +23,7 @@ img :
 
 run :
 	../z_tools/make.exe img
-	cp helloos.img ..\z_tools\qemu\fdimage0.bin
+	copy helloos.img ..\z_tools\qemu\fdimage0.bin
 	../z_tools/make.exe -C ../z_tools/qemu
 
 install :
@@ -30,9 +31,9 @@ install :
 	../z_tools/imgtol.com w a: helloos.img
 
 clean :
-	-rm ipl.bin
-	-rm ipl.lst
+	-del ipl.bin
+	-del ipl.lst
 
 src_only :
 	../z_tools/make.exe clean
-	-rm helloos.img
+	-del helloos.img
